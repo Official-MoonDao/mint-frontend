@@ -1661,7 +1661,7 @@ export default function Home() {
           dangerouslySetInnerHTML={{
             __html: `
             <video class='${styles.video}' autoplay loop muted playsinline>
-              <source src='assets/video/h5.mp4' type="video/mp4" />
+              <source src='https://s3.amazonaws.com/moonlist.moondao.link/assets/video/h5.mp4' type="video/mp4" />
             </video>
           `,
           }}
@@ -1670,13 +1670,13 @@ export default function Home() {
           <div className={styles.headerH5}>
             <div className={styles.logo}>
               <a href="https://moondao.com">
-                <Image src="/assets/img/logo.png" alt="Logo" layout="fill" />
+                <Image src="https://s3.amazonaws.com/moonlist.moondao.link/assets/img/logo.png" alt="Logo" layout="fill" />
               </a>
             </div>
             {account ? (
               <div className={styles.connected} onClick={() => window.open(`${config[env].etherscanUrl}${account}#tokentxnsErc721`)}>
                 <div>
-                  <Image src="/assets/img/icon-wallet.png" alt="wallet" layout="fill" />
+                  <Image src="https://s3.amazonaws.com/moonlist.moondao.link/assets/img/icon-wallet.png" alt="wallet" layout="fill" />
                 </div>
                 <span>{formatAddress(account)}</span>
               </div>
@@ -1707,7 +1707,7 @@ export default function Home() {
                     dangerouslySetInnerHTML={{
                       __html: `
                     <video class='${styles.mintVideo}' autoplay loop muted playsinline>
-                      <source src="assets/video/nft.mp4" type="video/mp4" />
+                      <source src="https://s3.amazonaws.com/moonlist.moondao.link/assets/video/nft.mp4" type="video/mp4" />
                     </video>
                   `,
                     }}
@@ -1716,7 +1716,7 @@ export default function Home() {
                     <span className={styles.ticketTitle}>TICKET TO SPACE</span>
                     <div className={styles.opensea} onClick={() => window.open("https://opensea.io/collection/ticket-to-space-nft")}>
                       <div>
-                        <Image src="/assets/img/icon-opensea.svg" alt="opensea" layout="fill" />
+                        <Image src="https://s3.amazonaws.com/moonlist.moondao.link/assets/img/icon-opensea.svg" alt="opensea" layout="fill" />
                       </div>
                       <span>Opensea</span>
                     </div>
@@ -1725,33 +1725,37 @@ export default function Home() {
               </div>
               <div className={styles.input}>
                 <input value={1} readOnly />
-                <span>
-                  <AnimatedNumber
-                    key="claimed"
-                    component="text"
-                    number={claimedCount}
-                    style={{
-                      transition: "0.8s ease-out",
-                      transitionProperty: "background-color, color, opacity",
-                      transitionDelay: "3s",
-                    }}
-                    duration={300}
-                    format={(n) => numeral(n).format("(0)")}
-                  />
-                  /
-                  <AnimatedNumber
-                    key="total"
-                    component="text"
-                    number={9060}
-                    style={{
-                      transition: "0.8s ease-out",
-                      transitionProperty: "background-color, color, opacity",
-                      transitionDelay: "3s",
-                    }}
-                    duration={300}
-                    format={(n) => numeral(n).format("(0)")}
-                  />
-                </span>
+                {
+                  account && (
+                    <span>
+                      <AnimatedNumber
+                        key="claimed"
+                        component="text"
+                        number={claimedCount}
+                        style={{
+                          transition: "0.8s ease-out",
+                          transitionProperty: "background-color, color, opacity",
+                          transitionDelay: "3s",
+                        }}
+                        duration={300}
+                        format={(n) => numeral(n).format("(0)")}
+                      />
+                      /
+                      <AnimatedNumber
+                        key="total"
+                        component="text"
+                        number={9060}
+                        style={{
+                          transition: "0.8s ease-out",
+                          transitionProperty: "background-color, color, opacity",
+                          transitionDelay: "3s",
+                        }}
+                        duration={300}
+                        format={(n) => numeral(n).format("(0)")}
+                      />
+                    </span>
+                  )
+                }
               </div>
               <div
                 className={complete || userClaimed ? styles.complete : loading ? styles.mintingBtn : styles.mintBtn}
@@ -1799,13 +1803,13 @@ export default function Home() {
           </div>
           <div className={styles.socials}>
             <div onClick={() => window.open("https://twitter.com/OfficialMoonDAO")}>
-              <Image src="/assets/img/icon-social-twitter.png" alt="twitter" layout="fill" />
+              <Image src="https://s3.amazonaws.com/moonlist.moondao.link/assets/img/icon-social-twitter.png" alt="twitter" layout="fill" />
             </div>
             <div onClick={() => window.open("https://discord.com/invite/5nAu7K9aES")}>
-              <Image src="/assets/img/icon-social-discord.png" alt="discord" layout="fill" />
+              <Image src="https://s3.amazonaws.com/moonlist.moondao.link/assets/img/icon-social-discord.png" alt="discord" layout="fill" />
             </div>
             <div onClick={() => window.open("https://github.com/Official-MoonDao")}>
-              <Image src="/assets/img/icon-social-github.png" alt="github" layout="fill" />
+              <Image src="https://s3.amazonaws.com/moonlist.moondao.link/assets/img/icon-social-github.png" alt="github" layout="fill" />
             </div>
           </div>
           <div className={styles.copyright}>Copyright © 2022 MoonDAO.</div>
@@ -1819,15 +1823,15 @@ export default function Home() {
       <Head>
         <title>MoonDAO Ticket To Space NFT</title>
       </Head>
-      <video id="bgVideo" poster="/assets/img/poster-pc.jpg" className={styles.video} autoPlay="autoplay" muted loop>
-        <source src={`assets/video/pc.mp4`} type="video/mp4" />
+      <video id="bgVideo" poster="https://s3.amazonaws.com/moonlist.moondao.link/assets/img/poster-pc.jpg" className={styles.video} autoPlay="autoplay" muted loop>
+        <source src={`https://s3.amazonaws.com/moonlist.moondao.link/assets/video/pc.mp4`} type="video/mp4" />
       </video>
       <div className={styles.blur}></div>
       <main className={styles.main}>
         <div className={styles.content}>
           <div className={styles.logo}>
             <a href="https://moondao.com">
-              <Image src="/assets/img/logo.png" alt="Logo" layout="fill" />
+              <Image src="https://s3.amazonaws.com/moonlist.moondao.link/assets/img/logo.png" alt="Logo" layout="fill" />
             </a>
           </div>
           <div className={styles.title}>To The</div>
@@ -1838,13 +1842,13 @@ export default function Home() {
           </p>
           <div className={styles.socials}>
             <div onClick={() => window.open("https://twitter.com/OfficialMoonDAO")}>
-              <Image src="/assets/img/icon-social-twitter.png" alt="twitter" layout="fill" />
+              <Image src="https://s3.amazonaws.com/moonlist.moondao.link/assets/img/icon-social-twitter.png" alt="twitter" layout="fill" />
             </div>
             <div onClick={() => window.open("https://discord.com/invite/5nAu7K9aES")}>
-              <Image src="/assets/img/icon-social-discord.png" alt="discord" layout="fill" />
+              <Image src="https://s3.amazonaws.com/moonlist.moondao.link/assets/img/icon-social-discord.png" alt="discord" layout="fill" />
             </div>
             <div onClick={() => window.open("https://github.com/Official-MoonDao")}>
-              <Image src="/assets/img/icon-social-github.png" alt="github" layout="fill" />
+              <Image src="https://s3.amazonaws.com/moonlist.moondao.link/assets/img/icon-social-github.png" alt="github" layout="fill" />
             </div>
           </div>
           <div className={styles.copyright}>Copyright © 2022 MoonDAO.</div>
@@ -1853,7 +1857,7 @@ export default function Home() {
           {account ? (
             <div className={styles.connected} onClick={() => window.open(`${config[env].etherscanUrl}${account}#tokentxnsErc721`)}>
               <div>
-                <Image src="/assets/img/icon-wallet.png" alt="wallet" layout="fill" />
+                <Image src="https://s3.amazonaws.com/moonlist.moondao.link/assets/img/icon-wallet.png" alt="wallet" layout="fill" />
               </div>
               <span>{formatAddress(account)}</span>
             </div>
@@ -1865,13 +1869,13 @@ export default function Home() {
           <div className={styles.mint}>
             <div className={styles.videoContainer}>
               <video className={styles.mintVideo} autoPlay="autoplay" muted loop id="mintVideo">
-                <source src="assets/video/nft.mp4" type="video/mp4" />
+                <source src="https://s3.amazonaws.com/moonlist.moondao.link/assets/video/nft.mp4" type="video/mp4" />
               </video>
               <div className={styles.ticket}>
                 <span className={styles.ticketTitle}>TICKET TO SPACE</span>
                 <div className={styles.opensea} onClick={() => window.open("https://opensea.io/collection/ticket-to-space-nft")}>
                   <div>
-                    <Image src="/assets/img/icon-opensea.svg" alt="opensea" layout="fill" />
+                    <Image src="https://s3.amazonaws.com/moonlist.moondao.link/assets/img/icon-opensea.svg" alt="opensea" layout="fill" />
                   </div>
                   <span>Opensea</span>
                 </div>
@@ -1885,33 +1889,37 @@ export default function Home() {
               </div>
               <div className={styles.input}>
                 <input value={1} readOnly />
-                <span>
-                  <AnimatedNumber
-                    key="claimed"
-                    component="text"
-                    number={claimedCount}
-                    style={{
-                      transition: "0.8s ease-out",
-                      transitionProperty: "background-color, color, opacity",
-                      transitionDelay: "3s",
-                    }}
-                    duration={300}
-                    format={(n) => numeral(n).format("(0)")}
-                  />
-                  /
-                  <AnimatedNumber
-                    key="total"
-                    component="text"
-                    number={9060}
-                    style={{
-                      transition: "0.8s ease-out",
-                      transitionProperty: "background-color, color, opacity",
-                      transitionDelay: "3s",
-                    }}
-                    duration={300}
-                    format={(n) => numeral(n).format("(0)")}
-                  />
-                </span>
+                {
+                  account && (
+                    <span>
+                      <AnimatedNumber
+                        key="claimed"
+                        component="text"
+                        number={claimedCount}
+                        style={{
+                          transition: "0.8s ease-out",
+                          transitionProperty: "background-color, color, opacity",
+                          transitionDelay: "3s",
+                        }}
+                        duration={300}
+                        format={(n) => numeral(n).format("(0)")}
+                      />
+                      /
+                      <AnimatedNumber
+                        key="total"
+                        component="text"
+                        number={9060}
+                        style={{
+                          transition: "0.8s ease-out",
+                          transitionProperty: "background-color, color, opacity",
+                          transitionDelay: "3s",
+                        }}
+                        duration={300}
+                        format={(n) => numeral(n).format("(0)")}
+                      />
+                    </span>
+                  )
+                }
               </div>
               <div
                 className={complete || userClaimed ? styles.complete : loading ? styles.mintingBtn : styles.mintBtn}
@@ -1928,7 +1936,7 @@ export default function Home() {
               </div>
               {/* <p className={styles.error}>{error}</p> */}
               <div className={styles.nftDesc}>
-                <Image src="/assets/img/nft-desc.png" alt="github" layout="fill" />
+                <Image src="https://s3.amazonaws.com/moonlist.moondao.link/assets/img/nft-desc.png" alt="github" layout="fill" />
               </div>
             </div>
           </div>
