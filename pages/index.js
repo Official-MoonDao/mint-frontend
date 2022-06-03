@@ -733,8 +733,8 @@ const config = {
         type: "function",
       },
     ],
-    etherscanUrl: "https://rinkeby.etherscan.io/address/",
-    openseaUrl: "https://testnets.opensea.io/collection/ticket-to-space-nft",
+    etherscanUrl: "https://etherscan.io/address/0x3C0cB52a81BdE105a319CDa7473Ae8CCD620E238",
+    openseaUrl: "https://opensea.io/collection/ticket-to-space-nft",
   },
   production: {
     chainId: 1,
@@ -1454,7 +1454,7 @@ const config = {
         type: "function",
       },
     ],
-    etherscanUrl: "https://etherscan.io/address/",
+    etherscanUrl: "https://etherscan.io/address/0x3C0cB52a81BdE105a319CDa7473Ae8CCD620E238",
     openseaUrl: "https://opensea.io/collection/ticket-to-space-nft",
   },
 };
@@ -1655,7 +1655,7 @@ export default function Home() {
     return (
       <div className={styles.container}>
         <Head>
-          <title>Moon</title>
+          <title>MoonDAO Ticket To Space NFT</title>
         </Head>
         <div
           dangerouslySetInnerHTML={{
@@ -1714,7 +1714,7 @@ export default function Home() {
                   />
                   <div className={styles.ticket}>
                     <span className={styles.ticketTitle}>TICKET TO SPACE</span>
-                    <div className={styles.opensea} onClick={() => window.open(config[env].openseaUrl)}>
+                    <div className={styles.opensea} onClick={() => window.open("https://opensea.io/collection/ticket-to-space-nft")}>
                       <div>
                         <Image src="/assets/img/icon-opensea.svg" alt="opensea" layout="fill" />
                       </div>
@@ -1764,14 +1764,14 @@ export default function Home() {
                 {complete || userClaimed ? "COMPLETED" : loading ? "MINTING..." : "MINT"}
               </div>
               <div className={styles.termsAndConditions}>
-                Please read the <a className={styles.register} href="https://moondao.com/docs/ticket-to-space-sweepstakes-rules">Terms and Conditions</a>
+                Please read the <a className={styles.register} href="https://moondao.com/docs/nft-owner-agreement">Terms and Conditions</a>
               </div>
               <div className={styles.desc}>
                 <div className={styles.descTitle}>
                   Sending a lucky winner to space in <span style={{ color: "#0AFFE2" }}>2022</span>
                 </div>
                 <div className={styles.descTips}>
-                  MoonDAO's Ticket to Space NFT collection has 9060 digital tickets that give you a chance of flying to space. MoonDAO has purchased tickets to space with Blue origin, and will select one astronaut through a public sweepstakes drawing. You could be that lucky winner that flies!
+                  MoonDAO's Ticket to Space NFT collection has 9060 digital tickets that give you a chance of flying to space. MoonDAO has purchased tickets to space with Blue origin, and will select one lucky winner through a public sweepstakes drawing. You could be that lucky winner that flies!
                 </div>
                 <div className={styles.descTips}>
                   <p className={styles.disclaimerTitle}>Disclaimer for sweepstakes</p>
@@ -1817,7 +1817,7 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Moon</title>
+        <title>MoonDAO Ticket To Space NFT</title>
       </Head>
       <video id="bgVideo" poster="/assets/img/poster-pc.jpg" className={styles.video} autoPlay="autoplay" muted loop>
         <source src={`assets/video/pc.mp4`} type="video/mp4" />
@@ -1834,7 +1834,7 @@ export default function Home() {
           <div className={styles.contentSubtitle}>MOON</div>
           <p className={styles.tips}>Mint for a chance to go to space</p>
           <p className={styles.smtips}>MINT FOR FREE (ONLY GAS) – Read the
-            <a className={styles.register} href="https://moondao.com/docs/ticket-to-space-sweepstakes-rules"> Terms and Conditions</a>
+            <a className={styles.register} href="https://moondao.com/docs/nft-owner-agreement"> Terms and Conditions</a>
           </p>
           <div className={styles.socials}>
             <div onClick={() => window.open("https://twitter.com/OfficialMoonDAO")}>
@@ -1869,7 +1869,7 @@ export default function Home() {
               </video>
               <div className={styles.ticket}>
                 <span className={styles.ticketTitle}>TICKET TO SPACE</span>
-                <div className={styles.opensea} onClick={() => window.open(config[env.openseaUrl])}>
+                <div className={styles.opensea} onClick={() => window.open("https://opensea.io/collection/ticket-to-space-nft")}>
                   <div>
                     <Image src="/assets/img/icon-opensea.svg" alt="opensea" layout="fill" />
                   </div>
@@ -1934,7 +1934,7 @@ export default function Home() {
           </div>
           <div className={styles.desc}>
             <div className={styles.descTitle}>
-              We are sending lucky NFT holders to space in <span style={{ color: "#0AFFE2" }}>2022</span>
+              We are sending a lucky winner to space in <span style={{ color: "#0AFFE2" }}>2022</span>
             </div>
           </div>
           <div className={styles.descTips}>
